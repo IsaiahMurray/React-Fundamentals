@@ -22,6 +22,7 @@ const Sidebar = () => {
                     <li><Link to="/jsxrules">JSX Rules</Link></li>
                     <li><Link to="/state">useState</Link></li>
                     <li><Link to="/effects">Effects</Link></li>
+                    <li><Link to="propsdemo">Props Demo</Link> </li>
                     <li><Link to="/resources">Resources</Link></li>
                 </ul>
             </div>
