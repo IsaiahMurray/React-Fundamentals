@@ -11,4 +11,12 @@ const PropsDemo = () => {
     )
 }
 
+const FunctionalComponent = props => {
+    return(
+        <div>
+            <p>{props.string}</p>
+        </div>
+    )
+}
+
 export default PropsDemo;
