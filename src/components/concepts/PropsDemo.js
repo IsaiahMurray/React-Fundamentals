@@ -11,14 +11,34 @@ const PropsDemo = () => {
     const [ width, setWidth ] = useState('350px');
     const [ textAlign, setTextAlign ] = useState('center');
 
+       
+    let styles = {
+        color: color,
+        backgroundColor: backgroundColor,
+        borderRadius: borderRadius,
+        borderStyle: borderStyle,
+        dispaly: dispaly,
+        width: width,
+        textAlign: textAlign
+    };
+
+    const toggleColor = () => {
+        color === 'white' ? setColor('black') : setColor('white');
+    };
+
+    const toggleBackgroundColor = () => {
+        backgroundColor === 'purple' ? setBackgroundColor('blue') : setBackgroundColor('purple');
+    };
+
     return (
+
         <div className="main">
             <div className="mainDiv">
                 <div style={styles}>
-                    <FunctionalComponent string="will this display?"/>
-                    <FunctionalComponent string="Props are pretty interesting"/>
-                    <FunctionalComponent string="You can send data from one component"/>
-                    <FunctionalComponent string=".... to another!"/>
+                    <FunctionalComponent string="will this display?" function={toggleColor}/>
+                    <FunctionalComponent string="Props are pretty interesting" function={toggleColor}/>
+                    <FunctionalComponent string="You can send data from one component" function={toggleColor}/>
+                    <FunctionalComponent string=".... to another!" function={toggleColor}/>
                 </div>
             </div>
         </div>
@@ -29,6 +49,7 @@ const FunctionalComponent = (props) => {
     return(
         <div>
             <p>{props.string}</p>
+            <button onClick={props.function}>Press Me!</button>
         </div>
     )
 }
